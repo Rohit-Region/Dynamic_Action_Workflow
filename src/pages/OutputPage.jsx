@@ -31,20 +31,17 @@ const OutputPage = ({ config }) => {
 
             case "Show Text":
                 setOutput(action.value);
-                setTimeout(resolve, 2000); // Show text for 2 seconds before moving on
+                setTimeout(resolve, 2000); 
                 break;
 
             case "Show Image":
                     console.log("__", action.value);
-                    const imageUrl = action.value?.trim() || "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmpT6rscUaqC6IK1x48k9GU-Av3fgKo0lPgg&s"; 
-                
-                    // Function to close modal
+                    const imageUrl = action.value?.trim() || "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmpT6rscUaqC6IK1x48k9GU-Av3fgKo0lPgg&s";                    
                     const closeModal = () => {
                         setOutput("");
-                        resolve(); // Continue workflow when modal is closed
+                        resolve(); 
                     };
                 
-                    // Set modal
                     setOutput(
                         <div style={{
                             position: "fixed",
@@ -77,7 +74,7 @@ const OutputPage = ({ config }) => {
                                 ✖
                             </button>
                 
-                            {/* Image */}
+                           
                             <img src={imageUrl} alt="User Defined" style={{
                                 maxWidth: "90vw", 
                                 maxHeight: "90vh",
@@ -87,13 +84,13 @@ const OutputPage = ({ config }) => {
                         </div>
                     );
                 
-                    // Auto-close after 3 seconds
+                  
                     setTimeout(closeModal, 2000);
                     break;
 
             case "Refresh Page":
                 window.location.reload();
-                return; // Stop execution here
+                return; 
 
             case "Set LocalStorage":
                 console.log("Storing Key:", action.key, "Value:", action.value); 
@@ -108,7 +105,7 @@ const OutputPage = ({ config }) => {
                 const storedValue = localStorage.getItem(action.key.trim()); 
                 console.log("Stored Value:", storedValue);
                 setOutput(storedValue ? `Stored Value: ${storedValue}` : "Key not found");
-                setTimeout(resolve, 2000); // Show for 2 seconds before proceeding
+                setTimeout(resolve, 2000); 
                 break;
 
             case "Increase Button Size":
@@ -165,7 +162,7 @@ const OutputPage = ({ config }) => {
       <button 
   className="add-button" 
   onClick={() => navigate('/')} 
-  style={{ marginLeft: "20px" }} // Adjust spacing as needed
+  style={{ marginLeft: "20px" }} 
 >
   Edit Existing Workflow
 </button>

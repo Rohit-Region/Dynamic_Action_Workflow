@@ -122,7 +122,7 @@ const SortableItem = ({ action, index, updateAction, removeAction }) => {
 const ConfigPage = ({ setConfig }) => {
   const [label, setLabel] = useState("Click Me");
   const [workflow, setWorkflow] = useState([]);
-  const [selectedActionType, setSelectedActionType] = useState(""); // New state for dropdown selection
+  const [selectedActionType, setSelectedActionType] = useState(""); 
   const navigate = useNavigate();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalContent, setModalContent] = useState("");
